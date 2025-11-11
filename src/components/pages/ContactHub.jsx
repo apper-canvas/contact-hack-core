@@ -26,7 +26,7 @@ const ContactHub = () => {
     loading: categoriesLoading
   } = useCategories()
 
-  // State
+// State
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
   const [filteredContacts, setFilteredContacts] = useState([])
