@@ -116,8 +116,8 @@ export const validateEmail = (email) => {
 export const validatePhone = (phone) => {
   if (!phone) return true // Phone is optional if email is provided
   
-  // Allow various phone number formats
-  const phoneRegex = /^[\+]?[(]?[\d\s\-\(\)]{10,}$/
+// Allow various phone number formats
+  const phoneRegex = /^[+]?[()]?[\d\s\-()]{10,}$/
   return phoneRegex.test(phone)
 }
 
