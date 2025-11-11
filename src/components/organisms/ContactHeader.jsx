@@ -3,10 +3,11 @@ import SearchBar from "@/components/molecules/SearchBar"
 import CategoryFilter from "@/components/molecules/CategoryFilter"
 import Button from "@/components/atoms/Button"
 import ApperIcon from "@/components/ApperIcon"
+import LogoutButton from "@/components/organisms/LogoutButton"
 import { cn } from "@/utils/cn"
 
 const ContactHeader = ({
-  searchQuery = "",
+searchQuery = "",
   onSearchChange = () => {},
   onSearchClear = () => {},
   categories = [],
@@ -26,7 +27,7 @@ const ContactHeader = ({
             Contact Hub
           </h1>
           <p className="text-slate-600 mt-1">
-            {totalContacts === 0 
+{totalContacts === 0 
               ? "Start building your contact network" 
               : `Manage your ${totalContacts} contact${totalContacts === 1 ? "" : "s"}`
             }
@@ -57,11 +58,16 @@ const ContactHeader = ({
         
         <div className="flex-shrink-0">
           <CategoryFilter
-            categories={categories}
+categories={categories}
             activeCategory={activeCategory}
             onCategoryChange={onCategoryChange}
             contactCounts={contactCounts}
           />
+        </div>
+
+        {/* Logout Button */}
+        <div className="flex items-center">
+          <LogoutButton />
         </div>
       </div>
     </div>

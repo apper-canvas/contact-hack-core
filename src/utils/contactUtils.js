@@ -72,7 +72,7 @@ export const filterContactsByQuery = (contacts, query) => {
   
   const searchTerm = query.toLowerCase().trim()
   
-  return contacts.filter(contact => 
+return contacts.filter(contact => 
     contact.name?.toLowerCase().includes(searchTerm) ||
     contact.email?.toLowerCase().includes(searchTerm) ||
     contact.company?.toLowerCase().includes(searchTerm) ||
@@ -87,7 +87,7 @@ export const filterContactsByCategory = (contacts, category) => {
     return contacts
   }
   
-  return contacts.filter(contact => contact.category === category)
+return contacts.filter(contact => contact.category === category)
 }
 
 export const getContactCounts = (contacts, categories) => {
@@ -98,7 +98,7 @@ export const getContactCounts = (contacts, categories) => {
   const counts = {}
   
   categories.forEach(category => {
-    counts[category.name] = contacts.filter(
+counts[category.name] = contacts.filter(
       contact => contact.category === category.name
     ).length
   })
@@ -124,7 +124,7 @@ export const validatePhone = (phone) => {
 export const validateContact = (contact) => {
   const errors = {}
   
-  if (!contact.name?.trim()) {
+if (!contact.name?.trim()) {
     errors.name = "Name is required"
   }
   
@@ -144,7 +144,6 @@ export const validateContact = (contact) => {
   if (!contact.category) {
     errors.category = "Please select a category"
   }
-  
   return {
     isValid: Object.keys(errors).length === 0,
     errors
