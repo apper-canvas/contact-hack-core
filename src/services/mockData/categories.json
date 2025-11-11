@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "name": "work",
+    "color": "#2563eb"
+  },
+  {
+    "Id": 2,
+    "name": "personal",
+    "color": "#8b5cf6"
+  },
+  {
+    "Id": 3,
+    "name": "family",
+    "color": "#10b981"
+  },
+  {
+    "Id": 4,
+    "name": "professional",
+    "color": "#f59e0b"
+  }
+]

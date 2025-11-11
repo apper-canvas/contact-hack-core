@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Toastify styles */
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Custom toast styles */
+.Toastify__toast-container {
+  @apply font-inter;
+}
+
+.Toastify__toast {
+  @apply rounded-lg shadow-lg border border-slate-200;
+  font-family: 'Inter', sans-serif;
+  min-height: 48px;
+}
+
+.Toastify__toast--success {
+  @apply bg-white text-slate-800 border-green-200;
+}
+
+.Toastify__toast--error {
+  @apply bg-white text-slate-800 border-red-200;
+}
+
+.Toastify__toast--warning {
+  @apply bg-white text-slate-800 border-yellow-200;
+}
+
+.Toastify__toast--info {
+  @apply bg-white text-slate-800 border-blue-200;
+}
+
+.Toastify__progress-bar {
+  @apply bg-primary-500;
+}
+
+/* Ripple effect for destructive buttons */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::before {
+  width: 300px;
+  height: 300px;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Ensure proper spacing and typography */
+* {
+  box-sizing: border-box;
+}
+
+/* Focus styles for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+/* Animation classes */
+.card-hover {
+  transition: all 0.2s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.button-click {
+  transition: transform 0.1s ease-out;
+}
+
+.button-click:active {
+  transform: scale(0.95);
+}
+
+/* Spring animation for toasts */
+.toast-enter {
+  animation: slideDown 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Empty state illustration styles */
+.empty-illustration {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
